@@ -1,0 +1,36 @@
+Enter records in College object as per excel
+
+Delete existing records in Student Object
+
+Delete the college field in Student table
+
+Click on Student from Setup - Quick find - Objects
+
+Custom fields and relationships - New - Master-Detail Relationship 
+Note that College is the Master and Student is the Detail
+Master-Detail Relationship has to be set at the Detail table level, not at the Master table level
+
+Related To - Choose College Object
+
+Then give field-label, field-name for the field in Student object - College
+
+Establish field-level security for reference field - field visible to what user profiles
+
+Add reference field to Page Layouts - leave the selected "Student Layout" as it is
+
+Specify the title that the related list will have in all of the layouts associated with the parent - leave at default
+
+Now, go back to the tab Students - Go
+
+New 
+
+When entering values for College, you need to select from the pick-list of Colleges added earlier
+
+When you go back to the master object - College - you can see the students listed under every college.
+
+
+-- 
+
+Delete record in College table and observe impact in Student object.
+
+Here, when you delete a record in College table (master), the corresponding records in Student object (child) also get deleted.

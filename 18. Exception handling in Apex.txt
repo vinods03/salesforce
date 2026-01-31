@@ -1,0 +1,15 @@
+system.debug('before exception');
+try {
+    double result = 10/0;
+    system.debug('the result is: ' +result);
+} catch(MathException e) {
+    system.debug('the exception is: ' +e);
+} catch(NullPointerException e) {
+    system.debug('the exception is: ' +e);
+} catch(DMLException e) {
+    system.debug('the exception is: ' +e);
+} catch(Exception e) {
+    system.debug('the exception is: ' +e);
+} finally {
+    system.debug('program over - with or without exception');
+}

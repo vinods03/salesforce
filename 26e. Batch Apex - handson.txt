@@ -1,0 +1,35 @@
+File - New- Apex Class:
+
+
+public class BatchApex implements Database.Batchable<SObject> {
+    
+    public Database.QueryLocator start(Database.BatchableContext BC) {
+        system.debug('Started Batch Apex program');
+        return Database.getQueryLocator('select firstname, lastname, company, status from Lead');
+    }
+    
+    public void execute(Database.BatchableContext BC, List<Lead> leads) {
+        system.debug('In execute phase');
+        for(Lead lead: leads) {
+            lead.company = 'Amazon';
+        }
+      update leads;        
+    }
+    
+    
+    public void finish(Database.BatchableContext BC) {
+        system.debug('Finished Batch Apex program');
+    }
+
+}
+
+--------
+
+Debug: Open Execute Anonymous Window: (note, we are using object name only here unlike previous method)
+
+BatchApex ba = new BatchApex();
+// execute batch apex program now
+ID BatchJobId = Database.executeBatch(ba, 500);
+// schedule batch apex program for later, 30 mins from now
+// String ScheduledId = System.scheduleBatch(ba, 'Batch Apex Job', 30);
+

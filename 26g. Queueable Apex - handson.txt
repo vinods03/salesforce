@@ -1,0 +1,24 @@
+File - New- Apex Class:
+
+public class QueueableApex implements Queueable {
+    
+    public void execute(QueueableContext context) {
+        
+        List<Lead> leads = [select firstname, lastname, company, status from Lead];
+        for(Lead lead: leads) {
+            lead.status = 'Working - Contacted';
+        }
+        
+        update leads;
+    }
+
+}
+
+--------------------
+
+
+Debug: Open Execute Anonymous Window:
+
+
+QueueableApex qa = new QueueableApex();
+Id jobid = System.enqueueJob(qa);

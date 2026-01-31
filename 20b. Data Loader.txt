@@ -1,0 +1,57 @@
+--------------------------------------------------- Insert ---------------------------------------------------
+
+Login to salesforce - Setup - Quick find - data loader
+
+Download, extract, run the "install.bat"
+
+Created "Leads_v1.csv" (D:\Vinod\AWSDataEngineering\30. Salesforce\Data) based on "Leads.csv"
+
+Open the installed Data Loader - Insert - Login as per D:\Vinod\AWSDataEngineering\30. Salesforce\Access failed (username, password + security token, prod / sandbox)
+Reset security token is possible by going to user profile at top right - Settings - Reset My Security Token
+
+Workaround - Go to https://workbench.developerforce.com -> worked (so no need to install data loader)
+Env: Production, API version: 62.0, Jump to - Insert, Object - Lead, Choose File - "Leads_v1.csv" above - Map the Salesforce fields to the columns from the uploaded CSV
+Process records asynchronously via Bulk API - Confirm Insert
+
+~~~ Verification
+
+Go to Salesforce - Setup - Quick find - Bulk Data Load Jobs - check status.
+
+Go to Salesforce - App Launcher (9 dots) - Quick find - Leads (check if new data is loaded)
+
+~~~~
+
+
+--------------------------------------------------- Update ---------------------------------------------------
+
+Workaround - Go to https://workbench.developerforce.com -> worked (so no need to install data loader)
+Env: Production, API version: 62.0, Jump to - SOQL query - Object Lead - select all cols except count() (our populated cols + Id are enough actually) - apply filter if needed
+Query - Note the Id values for your rows
+Create Leads_v2.csv, with an Id column and other cols that need to be updated
+
+JUmp to - Update - Leads_v2.csv - No need async / try async also - Confirm Update
+
+~~~ Verification
+
+Workbench: Jump to - SOQL query - Object Lead - execute query and verify column update
+
+Go to Salesforce - App Launcher (9 dots) - Quick find - Leads (check if new data is updated)
+
+~~~~
+
+--------------------------------------------------- Delete ---------------------------------------------------
+
+Use SOQL query to get Id
+
+Create Leads_v3.csv - Only Id is enough
+
+Jump to Delete - Leads_v3.csv - Confirm delete
+
+~~~ Verification
+
+Workbench: Jump to - SOQL query - Object Lead - execute query and verify row delete
+
+Go to Salesforce - App Launcher (9 dots) - Quick find - Leads (check if delete worked)
+
+~~~~
+

@@ -1,0 +1,11 @@
+In Lightning experience - setup - quick find
+
+public groups
+
+New - give a label and group name.
+
+Add / remove users, roles, other public groups etc to / from a public group
+
+============ 
+
+this is just a grouping to control access to salesforce resources

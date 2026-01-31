@@ -1,0 +1,7 @@
+List<College__c> colleges = [SELECT ID__c, Name,  City__c, University__c FROM College__c where name like 'PVN%'];
+for (College__c college: colleges) {
+    college.City__c = 'Coimbatore';
+}
+update colleges; // partial success not allowed
+Database.update(colleges, true) // partial success not allowed
+Database.update(colleges, false) // partial success allowed

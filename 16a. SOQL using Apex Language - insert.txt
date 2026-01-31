@@ -1,0 +1,17 @@
+// single-record insert
+College__c college = new College__c(ID__c=2790, Name='PVN', City__c='Chennai', University__c='CU');
+insert college;
+
+// multi-record insert
+List<College__c> colleges = new List<College__c>();
+College__c college1 = new College__c(ID__c=3790, Name='PVN1', City__c='Chennai', University__c='CU');
+College__c college2 = new College__c(ID__c=4790, Name='PVN2', City__c='Chennai', University__c='CU');
+College__c college3 = new College__c(ID__c=5790, Name='PVN3', City__c='Chennai', University__c='CU');
+colleges.add(college1);
+colleges.add(college2);
+colleges.add(college3);
+insert colleges; // partial success is not allowed
+
+Database.insert(colleges); // partial success is not allowed
+Database.insert(colleges, true); // partial success is not allowed
+Database.insert(colleges, false); // partial success is allowed

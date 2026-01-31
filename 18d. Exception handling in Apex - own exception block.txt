@@ -1,0 +1,22 @@
+~~~~~~~~~~~~~~~ Debug - Open Execute Anonymous Window
+
+system.debug('before exception');
+list<integer> a = new list<integer>{1, 2, 3, 0, 9, 8};
+for (integer i: a) {
+    try {
+        if (i == 0) {
+            throw new MyException();
+        } else {
+            system.debug('the value of i is: ' +i);
+        }
+    } catch(Exception e) {
+        system.debug('the exception is: ' +e);
+        system.debug('the exception cause is: ' +e.getCause());
+        system.debug('the exception message is: ' +e.getMessage());
+        system.debug('the exception type is: ' +e.getTypeName());
+        system.debug('the exception line is: ' +e.getLineNumber());
+        system.debug('the exception stack trace is: ' +e.getStackTraceString());
+    } finally {
+        system.debug('in the finally block');
+    }
+}

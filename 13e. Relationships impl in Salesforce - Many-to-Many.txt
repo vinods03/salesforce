@@ -1,0 +1,32 @@
+We need to establish Many-to-Manay relationship between Student object and Teacher object.
+One student can be taught by many teachers and one teacher can teach many students.
+
+Steps:
+
+Create a junction object
+Quick find - Objects - New Custom object - Label: Student Teacher
+Enter Record Name Label and Format:
+Record Name: Student Teacher Name
+Data Type: Auto Number for junction objects (not Text)
+Display Format: A-{0000}
+Staring Number: 1
+
+This junction object will have 1 master-detail relationship with Student as master
+Custom Fields & Relationships - New
+
+This junction object will have another master-detail relationship with Teacher as master
+Custom Fields & Relationships - New
+
+======================================
+
+
+Go to Students Tab
+
+Click on Existing Student Varad Joshi
+
+Add "New Student Teacher" multiple times and associate with different teachers
+
+This can be done for new student also
+
+Similarly, go to Teachers Tab and add "New Student Teacher" multiple times for existing teacher or new teacher
+

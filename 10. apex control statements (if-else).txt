@@ -1,0 +1,50 @@
+Developer Console - Debug - Open Execute Anonymous window
+
+---- Program 1 (nested if)
+
+
+integer num = 41;
+
+if (num > 0){
+    if (math.mod(num, 2) == 0) {
+      system.debug('Even positive');
+    } 
+    else {
+      system.debug('Odd positive');
+    }
+} else {
+    system.debug('Negative');
+}
+
+
+--------- Program 2 (chained if)
+
+integer score = 75;
+
+if (score >= 90) {
+    system.debug('Distinction');
+} else if (score >= 60) {
+    system.debug('First class');
+} else if (score >= 40) {
+    system.debug('Second class');
+} else {
+    system.debug('Fail');
+}
+
+
+--------- Program 3 (switch)
+
+
+string var = 'd';
+
+switch on var {
+    when 'a' {
+        system.debug('apple');
+    }
+    when 'b' {
+        system.debug('bat');
+    }
+    when else {
+        system.debug('invalid');
+    }
+}

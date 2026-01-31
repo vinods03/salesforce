@@ -1,0 +1,42 @@
+When i logged in as Test User (vinods03@gmail.com), i was not able to see my app "My App Lightning"
+
+Logged in as Sys Admin (vinods03409@agentforce.com) - Setup - Quick find - Users
+
+See the profile of Test User - it was Force.com - App Subscription User
+
+Click on the Profile - Edit (you will see "Custom Profile" is unchecked here)
+
+Custom App Settings -> Make My App Lightning "Visible" (this is still editable in non-custom profile)
+
+Save
+
+~~~~~~
+
+Now login back as Test User - you will be able to see the App - My App Lightning - but not the objects / tabs like Students, Colleges etc
+
+~~~~~~
+
+Logged in as Sys Admin (vinods03409@agentforce.com) - Setup - Quick find - Users
+
+Go back to the profile of Test User - it was Force.com - App Subscription User
+
+Edit - will not allow to change "Custom Object Permissions"
+
+So clone profile to new profile "Force.com - App Subscription New User" (you will see "Custom Profile" is unchecked here)
+
+Edit
+
+Custom Object Permissions -> Check all boxes here for the objects you want to be visible 
+
+Save
+
+Edit user and change profile to "Force.com - App Subscription New User"
+
+Save
+
+~~~~~~
+
+Login back as Test User - you should be able to see App as well as tabs / objects.
+
+Make sure - for every object, you choose "all records" instead of "recently viewed" - else it will look like record-level permissions are not there
+

@@ -1,0 +1,62 @@
+SOQL - Salesforce Object Query Languaage:
+
+~~~~~~~~~~~~~~~~~~ Classic View:
+
+User name dropdown at the top right - Developer Console
+
+File - Open Resource - Student__c.obj (this is the API name. __c represents custom object)
+
+Note that all custom fields will also have __c suffix
+
+Try queries like below in Query Editor:
+
+(for basic select -> select columns + ctrl key - Query - you will se query in query editor)
+
+select id, name, roll_number__c, branch__c, contact_number__c, college__c from Student__c where branch__c = 'IT';
+
+select id, name, roll_number__c, branch__c, contact_number__c, college__c from Student__c
+where roll_number__c = 35 and branch__c = 'ECE'
+
+select id, name, roll_number__c, branch__c, contact_number__c, college__c from Student__c
+where roll_number__c = 35 or branch__c = 'ECE'
+
+select id, name, roll_number__c, branch__c, contact_number__c, college__c from Student__c
+where roll_number__c = 35 and (branch__c = 'ECE' or branch__c = 'IT')
+
+select id, name, roll_number__c, branch__c, contact_number__c, college__c from Student__c
+where branch__c in ('ECE','IT')
+
+select id, name, roll_number__c, branch__c, contact_number__c, college__c from Student__c
+where branch__c in ('ECE','IT') order by roll_number__c desc
+
+select  id, Title, Company, Status from Lead
+where status like 'Closed%'
+
+select  id, city, Title, Company, Status from Lead
+order by city nulls first (nulls first is the default)
+
+select  id, city, Title, Company, Status from Lead
+order by city nulls last
+
+select  id, city, Title, Company, Status from Lead
+order by CreatedDate limit 5 (oldest 5 records)
+
+select  id, city, Title, Company, Status from Lead
+order by CreatedDate offset 5 (oldest 5 records will not be selected)
+
+limit & offset are used together for pagination:
+limit 10 offset 0 - page 1
+limit 10 offset 10 - page 2
+limit 10 offset 20 - page 3 etc
+
+Note: select * does not work in Salesforce
+
+~~~~~~~~~~~~~~~~~~ Switch to Lightning Experience:
+
+Object Manager - Quick find - Student
+
+Look at Fields & Relationships - see how field name is different from field label
+
+For developer console, click on the geaar box at top right - developer console
+
+Again, File - Open Resource - Student__c.obj and run queries as needed

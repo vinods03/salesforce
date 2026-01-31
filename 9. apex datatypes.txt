@@ -1,0 +1,71 @@
+public class DataTypes {
+
+    public integer a=3;
+
+    public Long b=5L;
+
+    public double c=3.2;
+
+    public decimal d=5.7;
+
+    public string e='Parag Jambhulkar';
+
+    public boolean f=true;
+
+    //public date dd=Date.newInstance(year, month, day)
+
+    public date g=Date.newInstance(2022, 12, 26);
+
+    //public time hh=Time.newInstance(hour, minute, second, millisecond)
+
+    public time h=Time.newInstance(06, 30, 32, 5);
+
+    //public datetime ii= Datetime.newInstance(date, time)
+
+    public datetime i=DateTime.newInstanceGmt(g, h);
+
+    public blob j=blob.valueOf('paragjam');
+
+    public id k='0D5B000001DVM9t';
+
+    
+
+    public void show()
+
+    {
+
+       system.debug('integer value:'+a); 
+
+       system.debug('long value:'+b);
+
+       system.debug('double value:'+c);  
+
+       system.debug('decimal value:'+d); 
+
+       system.debug('string value:'+e);
+
+       system.debug('boolean value:'+f); 
+
+       system.debug('date value:'+g); 
+
+       system.debug('time value:'+h); 
+
+       system.debug('datetime value:'+i); 
+
+       system.debug('blob value:'+j); 
+
+       system.debug('id value:'+k);
+
+    }
+
+
+}
+
+
+
+Program Code: (Anonymous Window)
+
+DataTypes obj=new DataTypes();
+
+obj.show(); 
+

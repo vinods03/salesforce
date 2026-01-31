@@ -1,0 +1,207 @@
+Classic View - + tab - Customize Tabs - Add Reports tab and Dashboards tab
+
+Go to Reports tab
+
+New dashboard
+
+--------- dashboard on summary report and matric report
+
+Drag and drop all components to RHS, then drag and drop the data source - the summary report - into all panes.
+
+You can set the width of every pane (narrow, medium, wide) & edit the properties of every pane (X-axis col, Y-axis col, group by col, display units, drill down to source/filtered rpt etc).
+
+--------- dashboard on tabular report 
+
+Tabular Reports can be used to generate Horizontal Bar chart, Vertical Bar chart, Pie chart but can not be used for Scatter chart, Guage, Metric chart.
+
+Drag and drop all components to RHS, then drag and drop the data source - the tabular report - into all panes. 
+You will see an error in every pane.
+
+Some pre-requisites need to be done in order to create dashboards on a tabular report:
+a. First, go to the Tabular report - customize - filters - add row-limit 99. 
+b. Once you add the row-limit, "dashboard settings" will appear at the top of the report.
+   There will be a note: 
+   For tabular reports that have a limited row count, choose a name & value to use in dashboard tables / charts. Tables show both name & value. Charts are grouped by name.
+   Add a Name (col name) and To add values, summarize a field or add a number, currency or boolean column to the report - use this column as the value.
+
+Now, the errors will no longer appear in the panes of teh dashboard.
+
+Why the pre-requisites ? Why Row Limit + Dashboard Settings for Tabular Reports?
+Tabular reports have no grouping or aggregation, so Salesforce doesn't know what to chart. 
+By adding a row limit (forces "Top N" view), Name field (defines chart categories/X-axis), and Value field (defines what to measure/Y-axis), you manually tell Salesforce how to group and visualize the flat data.
+Pro tip: Skip this complexity—use Summary or Matrix reports instead, which have built-in grouping and work with dashboards automatically without any special 
+
+--------- dashboard on joined report 
+
+Drag and drop all components to RHS, then drag and drop the data source - the joined report - into all panes. 
+You will see an error in every pane - You must include a chart in the source joined report.
+
+Go to Joined report - customize - add chart - add / use default horizontal bar chart. save and close. Go back to dashboard.
+Edit pane properties and select "use chart as defined in source report".
+
+Why chart in source report ?
+Joined reports combine multiple report blocks with different groupings, making it impossible for dashboards to auto-generate charts (Salesforce doesn't know which block to visualize or how to combine them). By pre-defining a chart IN the joined report itself, you tell Salesforce exactly how to visualize the combined data, then the dashboard simply displays that pre-built chart.
+
+~~~~~~~~~~~~ Note 1
+
+Dynamic dashboard:
+
+View dashboard as:
+Run as specified user
+Run as logged-in user
+Show all users the same data in the dashboard by choosing a specific running user, or show data according to each viewer's access level by choosing to run as the logged-in user. 
+
+
+~~~~~~~~~~~~ Note 2
+
+You can manually refresh a dashboard or schedule a dashboard refresh. schedule option is available only in production / sandbox editions, not developer edition.
+
+----------------------------------------------------------- charts in reports vs charts in dashboards ---------------------------------------------------------
+
+
+What is the difference between charts in reports and the charts in dashboards ? why dashboard charts if charts can be created in reports itself ?
+Great question! This is a common point of confusion. Let me explain the key differences and why both exist:
+
+## Reports vs. Dashboards - Key Differences
+
+### Reports with Charts
+**Purpose:** Detailed data analysis and exploration
+
+**Characteristics:**
+- **One chart per report** (shows data from that specific report)
+- **Detailed data view** - you can see the underlying records
+- **Interactive drilling** - click chart to see details, filter dynamically
+- **Ad-hoc analysis** - run filters, group by different fields on the fly
+- **Export data** - download the actual records as CSV/Excel
+- **For individual use** - typically one person analyzing data
+
+**Use when:**
+- You need to explore data and see details
+- You want to drill into specific records
+- You need to export the underlying data
+- You're doing analysis for yourself
+
+### Dashboards with Charts
+**Purpose:** Visual summary and monitoring at-a-glance
+
+**Characteristics:**
+- **Multiple charts in one view** (can combine 3-20 components)
+- **Multiple data sources** - each chart can pull from different reports
+- **High-level overview** - see key metrics together without details
+- **Real-time monitoring** - refresh to see current state
+- **Shared with teams** - display on screens, share with groups
+- **Filters apply to all components** - one filter affects entire dashboard
+- **Less drilling** - focused on visualization, not exploration
+
+**Use when:**
+- You need to see multiple metrics at once
+- You want executive/team overview
+- You need to monitor KPIs regularly
+- You want to combine data from different sources
+
+## Practical Examples
+
+### Example 1: Sales Manager
+
+**Report with Chart:**
+"Show me all opportunities closing this quarter"
+- See chart of opportunities by stage
+- Click chart → drill into specific opportunities
+- Export list of all opportunities
+- Filter by rep, amount, product
+
+**Dashboard:**
+"Give me my sales overview"
+- Chart 1: Opportunities by stage (from Report A)
+- Chart 2: Revenue by region (from Report B)
+- Chart 3: Top 10 reps (from Report C)
+- Gauge: Quota attainment (from Report D)
+- All visible at once, refreshes every hour
+
+### Example 2: Support Team
+
+**Report with Chart:**
+"Analyze all cases from last month"
+- Chart showing cases by status
+- Drill down to see specific case details
+- Filter by priority, owner, product
+- Export case list for further analysis
+
+**Dashboard:**
+"Monitor our support metrics"
+- Chart 1: Open cases by priority (Report A)
+- Chart 2: Average resolution time (Report B)
+- Chart 3: Cases by product (Report C)
+- Metric: Customer satisfaction score (Report D)
+- Team sees this on a TV screen all day
+
+## Why You Need Both
+
+### Reports are for:
+- ✅ Deep analysis
+- ✅ Finding specific records
+- ✅ Exporting data
+- ✅ Ad-hoc questions
+- ✅ One data source at a time
+
+### Dashboards are for:
+- ✅ Quick overview
+- ✅ Combining multiple metrics
+- ✅ Monitoring KPIs
+- ✅ Executive presentations
+- ✅ Team visibility
+- ✅ Trend spotting
+
+## Technical Differences
+
+| Feature | Report Chart | Dashboard Chart |
+|---------|-------------|-----------------|
+| **Number of charts** | 1 per report | Multiple per dashboard |
+| **Data sources** | 1 report | Multiple reports |
+| **Interactivity** | High (drill down, filter) | Low (view only) |
+| **Detail access** | Can see records | Summary only |
+| **Refresh** | Manual or scheduled | Scheduled or manual |
+| **Filters** | Report-specific | Dashboard-wide |
+| **Sharing** | Individual focus | Team focus |
+
+## Real-World Workflow
+
+**Typical usage pattern:**
+
+1. **Create reports** with charts for detailed analysis
+2. **Build dashboard** using those reports for overview
+3. **Check dashboard daily** for quick status
+4. **Click "View Report"** on dashboard when you need details
+5. **Drill into report** to investigate anomalies
+
+**Example:**
+- Dashboard shows "Sales are down this month" (chart is red)
+- You click to open the underlying report
+- Report lets you filter and find why (which reps, which products)
+- You drill into specific opportunities to take action
+
+## Think of It This Way
+
+**Reports = Spreadsheet with a chart**
+- Detailed, explorable, exportable
+
+**Dashboards = Executive summary presentation**
+- High-level, visual, multiple perspectives
+
+You wouldn't present a detailed spreadsheet to executives - you'd create a summary slide deck. That's what dashboards do for your reports!
+
+## Bottom Line
+
+**You need reports for:**
+- Doing the work
+- Finding answers
+- Detailed analysis
+
+**You need dashboards for:**
+- Monitoring results
+- Team visibility
+- Quick status checks
+- Making decisions fast
+
+Both serve different purposes in the data analysis and decision-making process. Reports are your tool for digging in, dashboards are your tool for staying informed!
+

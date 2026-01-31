@@ -1,0 +1,14 @@
+system.debug('before exception');
+try {
+    double result = 10/0;
+    system.debug('the result is: ' +result);
+} catch(Exception e) {
+    system.debug('the exception is: ' +e);
+    system.debug('the exception cause is: ' +e.getCause());
+    system.debug('the exception message is: ' +e.getMessage());
+    system.debug('the exception line number is: ' +e.getLineNumber());
+    system.debug('the exception stack trace string is: ' +e.getStackTraceString());
+    system.debug('the exception type is: ' +e.getTypeName());
+} finally {
+    system.debug('program over - with or without exception');
+}

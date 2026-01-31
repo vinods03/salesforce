@@ -1,0 +1,8 @@
+Create new objects / tabs - Staff Rooms / Teachers
+
+Enter records as in excel
+
+The Lookup Relationship field is created in Teacher object (child) refering to Staff Room object (master)
+
+If you delete a Staff room (master) record, corresponding Teacher (child) record still exists with blank value in the Staff room field.
+

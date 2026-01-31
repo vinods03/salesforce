@@ -1,0 +1,10 @@
+List<College__c> deleted_colleges = [SELECT Name, ID__c, City__c, University__c FROM College__c where isdeleted = true ALL ROWS];
+undelete deleted_colleges; // partial success not allowed
+Database.undelete(deleted_colleges); // partial success not allowed
+Database.undelete(deleted_colleges, true); // partial success not allowed
+Database.undelete(deleted_colleges, false); // partial success allowed
+
+Note: ALL ROWS indicates both object records + records from recycle bin
+When you apply filter "where isdeleted = true", query fetches only those records in recycle bin
+
+Note: ALL ROWS works in Apex, not in SOQL

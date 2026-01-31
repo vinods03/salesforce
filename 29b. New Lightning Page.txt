@@ -1,0 +1,29 @@
+Setup - Quick find
+
+Lightning App  Builder (existing pages will list)
+
+New  (Page)
+
+App Page
+
+Label - My LWC Page
+
+Layout: Main Region and Right Sidebar
+
+Save
+
+Activation:
+
+Page Setting: Activate for all users
+
+Lightning Experience: Add to Lightning Apps (I chose My App Lightning here)
+
+Add components, Save, Activate and Verify
+
+
+---
+
+You can aslo add this Page to anothetr App Later
+
+From App Launcher, go to an App - say sales - In the tab / page list at the top (nav bar), click on edit and add item
+

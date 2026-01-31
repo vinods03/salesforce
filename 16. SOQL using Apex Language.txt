@@ -1,0 +1,16 @@
+In Developer Console, first lets create a query using SOQL:
+
+File - Open Resource - Student__c:
+SELECT Id, Name, Roll_Number__c, Branch__c FROM Student__c
+
+Then, move to Debug - Open Execute Anonymous Window, where we will convert the SOQL into Apex language:
+Method 1:
+List<Student__c> students = [SELECT Id, Name, Roll_Number__c, Branch__c FROM Student__c];
+    for (Student__c student: students) {
+        system.debug('Name: ' +student.Name +' Roll Number: ' + student.Roll_Number__c);
+    }
+Method 2:
+Map<ID, Student__c> students = new Map<ID, Student__c>([SELECT Id, Name, Roll_Number__c, Branch__c FROM Student__c]);
+for (Student__c student: students.values()) {
+        system.debug('Name: ' +student.Name +' Roll Number: ' + student.Roll_Number__c);
+    }

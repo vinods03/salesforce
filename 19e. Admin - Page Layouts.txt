@@ -1,0 +1,51 @@
+In Salesforce - Lightning experience  - Object Manager - Quick find and Choose the object (say Student)
+
+Go to Page Layouts section of the Object - Fields
+
+Drag and drop a "Section" into the "Student Detail" area - call the section "Institute details"
+
+Drag and drop the field "College" from the default "Information" section into the "Institute details" section
+
+Then drag and drop "Blank Space" between all fields in the "Information" section
+
+You can also choose to set a field "Branch" as Read Only 
+
+Save
+
+==== where do the above changes reflect ?
+
+Click on the App Launcher (9-dots) - search "Students". You should see the changes.
+
+This is where users work.
+
+I was still able edit the value in Branch:
+
+Common Reasons You Can Still Edit
+
+1. You're Using Quick Edit/Inline Editing
+
+If you're editing directly from the list view (clicking the pencil icon on a field)
+Page layout read-only only applies to the record detail/edit page, not list views
+Solution: Go to the actual record page and click "Edit" button to see read-only enforcement
+
+2. You're an Admin or System Admin Profile
+
+System Administrators often bypass certain UI restrictions
+Page layout read-only is more of a UI convenience than hard security
+Check: Are you logged in as a System Administrator?
+
+3. Field-Level Security Overrides
+
+If the field has "Read" and "Edit" permissions in your profile's field-level security, you can edit it
+Page layout read-only is the weaker restriction
+Field-level security (profile) > Page layout settings
+
+4. You're Editing via Different Method
+Page layout read-only doesn't prevent editing through:
+
+API calls
+Data Loader
+Apex code/triggers
+Process Builder/Flow
+Mobile app (sometimes)
+

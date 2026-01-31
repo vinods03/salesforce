@@ -1,0 +1,8 @@
+SELECT COUNT() FROM OPPORTUNITY
+
+SELECT COUNT_DISTINCT(LeadSource) FROM OPPORTUNITY
+
+SELECT LeadSource, min(amount), max(amount), sum(amount), avg(amount) fROM OPPORTUNITY group by LeadSource
+
+SELECT LeadSource, min(amount), max(amount), sum(amount), avg(amount) fROM OPPORTUNITY group by LeadSource
+having min(amount) >= 80000

@@ -1,0 +1,19 @@
+## Why Use sObject Instead of Specific Object Types?
+
+**Use sObject when you need FLEXIBILITY in code:**
+
+**Advantage - Dynamic Operations:**
+- Process records when you don't know object type at runtime
+- Build generic utility classes that work across multiple objects
+- Handle mixed object lists from queries
+
+**Disadvantage:**
+- **Lose type safety** - can't access specific fields directly (must use `.get('FieldName')`)
+- **More complex syntax** - harder to read/maintain
+- **Slower performance** - dynamic field access is slower than direct
+
+**When to use each:**
+- **Specific type (Account, Contact)**: When you know the object type - safer, faster, easier
+- **sObject**: When building generic/reusable code or handling multiple object types dynamically
+
+**Pro tip:** Default to **specific object types** (Account, Contact__c) for readability and safety—only use sObject when you actually need the flexibility for multiple object types.

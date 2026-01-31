@@ -1,0 +1,56 @@
+============================ using simple data types
+
+for (integer i = 0; i < 5; i++) {
+    system.debug('i-squared is: ' +(i*i));
+}
+
+integer i = 0;
+while (i < 5) {
+    system.debug('i-squared is: ' +(i*i));
+    i++;
+}
+
+integer i = 0;
+do {
+    system.debug('i-squared is: ' +(i*i));
+    i++;
+} while (i < 5);
+
+================================ using complex data types
+
+integer[] myarray = new integer[]{10, 30, 45, 75, 85};
+    for (integer i: myarray) {
+        system.debug('The value of i is: '+i);
+    }
+
+string[] newarray = new string[]{'a','x','m','d','p'};
+    for (string s: newarray) {
+        system.debug('The value of s is: '+s);
+    }
+
+list<integer> mylist = new list<integer>{1, 5, 23, 90, 23};
+    for (integer l: mylist) {
+        system.debug('The value of l is: '+l);
+    }
+
+set<integer> myset = new set<integer>{1, 5, 23, 90, 23};
+    for (integer t: myset) {
+        system.debug('The value of t is: '+t);
+    }
+
+===================================
+
+break & continue:
+
+for (integer i = 0; i <= 5; i++) {
+    if (i == 3)
+        break;
+    system.debug('The value of i is: ' +i);
+}
+
+
+for (integer i = 0; i <= 5; i++) {
+    if (i == 3)
+        continue;
+    system.debug('The value of i is: ' +i);
+}

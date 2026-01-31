@@ -1,0 +1,24 @@
+## Must Have:
+✅ **Profile** - Every user MUST have exactly one profile (required, cannot be blank)
+
+## Optional:
+✅ **Role** - Optional, but **highly recommended** in most orgs
+- You can leave it blank
+- However, if your org uses role hierarchy for sharing, users without roles may have limited visibility
+- Best practice: assign roles to most users for proper data access
+
+✅ **Public Group** - Completely optional
+- Users can be in zero, one, or multiple public groups
+- Only needed if you're using groups for sharing rules or manual sharing
+
+✅ **Queue** - Completely optional
+- Users can be members of zero, one, or multiple queues
+- Only needed if they need to work on shared records from those queues
+
+## Additional Context
+
+While Role is technically optional at the system level, many organizations treat it as practically required because:
+- Without a role, users can't benefit from role hierarchy sharing
+- They can't see records owned by subordinates
+- Some sharing rules may not work as expected
+

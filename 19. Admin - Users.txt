@@ -1,0 +1,11 @@
+In Lightning experience - setup - quick find
+
+users
+
+user - new user
+
+give first name (Test), last name (User), alias (testuser), nickname (testuser), email, some role and leave rest at default values 
+
+Verify email (vinods03@gmail.com) and reset password and login
+
+The email will be the username for the login screen

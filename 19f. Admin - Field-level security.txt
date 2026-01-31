@@ -1,0 +1,36 @@
+Changes in Page Layouts (a field being visible / not visible, read-only / editable, required / not required) are applicable for ALL users 
+
+But what if different users need access to different fields - This is achieved using field-level security - you can control (Visible/Not Visible, Read Only/Editable)
+
+```````````````
+
+Login as System admin (vinods03409@agentforce.com)
+
+Setup
+
+Object Manager - Teacher
+
+Fields & Relationships
+
+New (field) - Data Type: Number
+
+Field Label / Name - Experience
+
+Establish field-level security: unselect all profiles and select only System Administrator for "Visible"
+
+Add to Page Layouts - leave at default i.e. add to Teacher Page Layout
+
+Now go to App Launcher - search for Teachers 
+
+When you try to add a New Record, experience field shows.
+
+~~~~
+
+Logout and Login as vinods03@gmail.com that is not Sys Admin profile
+
+Now go to App Launcher - search for Teachers 
+
+When you try to add a New Record, experience field does not show
+
+
+

@@ -1,0 +1,21 @@
+In Lightning experience - setup - quick find
+
+queues
+
+New - give a label and queue name.
+
+Add supported objects and queue members (users, roles or public groups)
+
+============ 
+
+Queues allow groups of users to manage a shared workload more effectively. A queue is a location where records can be routed to await processing by a group member. The records remain in the queue until a user accepts them for processing or they are transferred to another queue. You can specify the set of objects that are supported by each queue, as well as the set of users that are allowed to retrieve records from the queue.
+
+
+The typical workflow is:
+
+- Accept/Claim the record from the queue (changes owner from queue to individual user)
+- Process according to your business requirements
+- Complete the work (update status, add notes, create related records)
+- Close or reassign as appropriate
+
+The key benefit of queues is that work is pooled centrally rather than pre-assigned, so available team members can pull work as they have capacity, creating better workload distribution and faster response times.

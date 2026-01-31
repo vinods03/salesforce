@@ -1,0 +1,9 @@
+~~~~~~~~~~~~~~~ File - New - Apex Class:
+
+public class MyException extends Exception {
+    
+    override public String getMessage() {
+        return 'zero not allowed !!!';
+    }
+
+}

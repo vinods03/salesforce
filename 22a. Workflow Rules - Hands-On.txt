@@ -1,0 +1,46 @@
+Setup - Object Manager - Student - Add 2 new fields - score and exam passed
+
+Enable "Allow Activities" - so that "Track Activities" is checked on the object (needed for New Task to show up in workflow rules for custom objects)
+
+~~~~
+
+Create a new Visual Force Template related to Object Student
+
+~~~~
+
+Setup - Quick find - Workflow Rules
+
+Create New Rule
+
+Select Object on which rule needs to be applied - Student
+
+Evaluation criteria: Evaluate the rule when a record is: created, and any time it's edited to subsequently meet criteria
+
+Rule criteria: (when met) score > 40
+
+Workflow actions: 
+
+a) New Task for Test User with Due Date as Rule Trigger date
+
+b) New field update - select object (all parent-child objects will also list), select field to update - Exam Passed, Checkbox - True
+
+c) New Email alert - select email template created above, select recipient and other email addresses
+
+d) New Outbound Message - provide an endpoint URL and select the fields to send
+
+Then Activate Rule
+
+
+~~~~
+
+Now, update score of 1 student to 45.
+
+I could see:
+"Exam Passed" got checked in Student Object
+Got an Email. 
+Log out & Login as Test User - from App Launcher (9-dots), search Tasks and i could see the assigned Task. 
+          Test User, upon reviewing, can mark the Task Complete, Change date, add comments etc.
+No endpoint, so cannot test outbound message.
+
+
+

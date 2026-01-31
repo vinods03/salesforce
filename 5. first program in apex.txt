@@ -1,0 +1,18 @@
+Login to salesforce
+Username at top right - Options - Switch to Salesforce Classic
+Username dropdown at top right
+Developer Console
+Debug
+Open Execute Anonymous Window
+system.debug('hello world');
+Execute
+Double-click on the logs - select debug-only
+
+Switch to Lightening Experience
+Click on Setup (gearbox icon)
+Developer console
+Debug
+Open Execute Anonymous Window
+system.debug('hello world');
+Execute
+Double-click on the logs - select debug-only

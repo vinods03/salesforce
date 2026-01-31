@@ -1,0 +1,85 @@
+**Role** and **Profile** serve completely different purposes in Salesforce. Let me break them down:
+
+## Profile - Controls WHAT you can do
+A profile determines:
+- **Object permissions**: Which objects you can create, read, edit, delete 
+- **Field permissions**: Which fields you can see and edit
+- **App access**: Which apps you can use
+- **System permissions**: Administrative capabilities (like "Modify All Data", "Manage Users")
+- **Tab visibility**: Which tabs appear in your navigation
+- **Page layout assignments**: Which layouts you see
+
+**Think of it as:** Your job description and capabilities
+
+## Role - Controls WHAT you can see (data visibility)
+A role determines:
+- **Record access through hierarchy**: Users can see records owned by users below them in the role hierarchy
+- **No direct permissions**: Roles don't grant create/edit/delete abilities
+- **Works with sharing settings**: Roles extend access based on org-wide defaults and sharing rules
+
+**Think of it as:** Your position in the organizational chart
+
+## How They Work Together
+
+**Example scenario:**
+
+**Profile = "Sales User"**
+- Can create/edit/delete Opportunities
+- Can see the Sales app
+- Can run reports
+
+**Role = "Sales Manager"**
+- Can see all Opportunities owned by "Sales Reps" below them in hierarchy
+- Even if org-wide default for Opportunities is "Private"
+
+**Role = "Sales Rep"**
+- Can only see their own Opportunities (if set to Private)
+- Cannot see their manager's or peer's records (unless shared)
+
+## Key Difference
+
+- **Profile** = Functional permissions (what actions you can perform)
+- **Role** = Data access hierarchy (whose records you can see)
+
+A user could have a powerful profile (lots of permissions) but a low role (can't see much data), or vice versa. Both work together to define a user's complete access in Salesforce.
+
+~~~~~~~~~~~~~~~~~~~
+
+Suppose a user could have a powerful profile (lots of permissions) but a low role (can't see much data)
+
+## Permissions vs. Visibility
+
+**Profile (powerful) gives you:**
+- Permission to CREATE, UPDATE, DELETE on **any** record of that object type **that you can access**
+
+**Role (low) limits:**
+- **Which specific records** you can see/access, not which object types
+
+## Concrete Example
+
+**User: John**
+- **Profile**: Sales Manager Profile
+  - Can create/edit/delete ALL Opportunities (permission exists)
+  - Can create/edit/delete ALL Accounts (permission exists)
+  
+- **Role**: Junior Sales Rep (low in hierarchy)
+- **Org-Wide Default**: Private for Opportunities and Accounts
+
+**What John can actually do:**
+
+✅ He has **permission** to create/edit/delete Opportunities and Accounts (from profile)
+
+❌ But he can only **see and access**:
+- Opportunities HE owns
+- Accounts HE owns
+- Records explicitly shared with him
+
+So John has the **capability** (profile permissions) to edit any Opportunity, but the **visibility** (role + sharing) only lets him see a few records. 
+He can't edit what he can't see.
+
+## The Key Point
+
+- **Profile** controls permissions on the **object/table level** (can you edit Opportunities at all?)
+- **Role** controls visibility on the **record level** (which specific Opportunity records can you see?)
+
+You don't get fewer object types with a low role - you get fewer **records within those objects**.

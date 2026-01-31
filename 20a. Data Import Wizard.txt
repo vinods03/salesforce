@@ -1,0 +1,26 @@
+~~~ Data Import Pre-requisites
+
+I manually created a CSV file - leads.csv at "D:\Vinod\AWSDataEngineering\30. Salesforce\Data"
+I manually inserted one record in Leads Object in Sales force by clicking on App Launcher -> search for Leads -> New
+
+~~~ Data Import Steps
+
+Setup 
+
+Quick find
+
+Look for "Data Import Wizard"
+
+Launch Wizard
+
+What kind of data -> Standard Objects -> Leads
+What do you want to do -> Add new and update existing records, Match Lead by Name
+Where is your data located -> CSV (browse and choose file csv file created above) 
+Edit Field Mapping
+Review and Start Import
+Upon Success, you will be taken to Bulk Data Load Jobs page -> Here you can see # records processed, records failed, processing time, start time, end time etc. 
+"View Result" for more detail - result.csv downloaded from salesforce at "D:\Vinod\AWSDataEngineering\30. Salesforce\Data"
+
+You can also go to Bulk Data Load Jobs page from Setup -> Quick find -> Bulk Data Load Jobs
+
+Also verify in the Salesforce Leads object to see if insert / update has happened as expected

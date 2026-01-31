@@ -1,0 +1,35 @@
+File - New - ApexClass:
+
+public class FutureExample1 {
+    
+    @future
+    public static void updateRecords() {
+        
+        List<Lead> records = [select firstname, lastname, company, status from lead where firstname = 'Vinod'];
+        for (Lead record: records) {
+            record.status = 'Working - Contacted';
+        }
+        
+        update records;
+        
+    }
+    
+    @future
+    public static void insertRecords() {
+        Lead record = new Lead(FirstName='Axar', LastName='Patel',Company='CWC', status = 'Open - Not Contacted');
+        insert record;
+    }
+
+}
+
+----
+
+Debug - Open execute anonymous window:
+
+
+system.debug('Calling future methods in Future Example 1');
+FutureExample1.updateRecords();
+FutureExample1.insertRecords();
+
+
+Verify the data in the table

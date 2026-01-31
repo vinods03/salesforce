@@ -1,0 +1,49 @@
+Ah, got it! You want to create an **App** (not an App Page). Here's how:
+
+## **Step-by-Step to Create a Lightning App:**
+
+1. **Go to Setup**
+   - Click the **gear icon** (⚙️) in top right
+   - Click **Setup**
+
+2. **Open App Manager**
+   - In Quick Find box, type: **"App Manager"**
+   - Click **App Manager**
+
+3. **Create New Lightning App**
+   - Click **New Lightning App** button
+
+4. **App Details**
+   - **App Name**: Enter name (e.g., "My Custom App")
+   - **Developer Name**: Auto-fills
+   - **Description**: Optional
+   - **App Image**: Optional
+   - Click **Next**
+
+5. **App Options**
+   - Choose options (usually keep defaults)
+   - Click **Next**
+
+6. **Utility Items** (Optional)
+   - Add utility bar items if needed
+   - Click **Next**
+
+7. **Navigation Items (Tabs)**
+   - Select which tabs to include in your app:
+     - Home
+     - Accounts
+     - Contacts
+     - Custom tabs, etc.
+   - Click **Next**
+
+8. **User Profiles**
+   - Select which user profiles can access this app
+   - Click **Save & Finish**
+
+## **Access Your New App:**
+
+- Click **App Launcher** (waffle icon 🧇) in top left
+- Find and click your new app name
+- Your app will open with the tabs you selected!
+
+**Now you have a custom App!** To add your component to this app, you'd create an App Page (previous steps) and add it as a tab in this app.

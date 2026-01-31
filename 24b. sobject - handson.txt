@@ -1,0 +1,34 @@
+Setup - Developer Console - File - Open Resource - Student__c
+
+1. Execute the query - note how parent object field is referenced - College__r.Name
+SELECT Id, Name, Roll_Number__c, Branch__c, College__r.Name FROM Student__c 
+
+Debug - Open execute anonymous window:
+
+2a. Convert the above query into apex language with standard object:
+List<Student__c> students = [select name, roll_number__c, branch__c, college__r.name from student__c];
+for (Student__c student: students) {
+    system.debug('Student name: ' +student.name + ' Roll No: ' +student.roll_number__c + ' Branch: '+student.branch__c + ' College Name: ' +student.college__r.name);
+}
+Execute - Debug only to see above debug stmts
+
+2b. Convert the above query into apex language with Sobject:
+List<SObject> students = [select name, roll_number__c, branch__c, college__r.name from student__c];
+for (SObject student: students) {
+    system.debug('Student name: ' +student.get('name') + ' Roll No: ' +student.get('roll_number__c') + ' Branch: '+student.get('branch__c') + ' College Name: ' +student.getSObject('college__r').get('name'));
+}
+
+
+3. insert data using SObject
+
+SObject record=(SObject)Type.forName('Student__c').newInstance();
+record.put('Name','Madhav Sharma');
+record.put('Roll_Number__c',43);
+record.put('branch__c','AIML');
+record.put('College__c','a01g500000609npAAA');
+
+insert record;
+
+Note: See the value of college__c above
+Run below query first, note down the value of required college__c and then use in apex as shown above:
+SELECT Id, Name, Roll_Number__c, Branch__c, College__c FROM Student__c -> see how parent field reference (College__r.Name) is different from parent obect reference (College__c)

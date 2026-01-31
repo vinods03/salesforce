@@ -1,0 +1,13 @@
+Setup - Quick find - Data export (wizard)
+
+Select the objects to be exported - You can export immediately or schedule.
+
+You will get an email once export is completed with a link. Download, extract and check your data.
+
+Main differences in data export using data export wizard vs data loader export are:
+
+In Data export Wizard, you cannot select columns or apply row filters
+
+In Data export Wizard, you can select/export multiple objects in a go
+
+In Data export Wizard, you can schedule the export

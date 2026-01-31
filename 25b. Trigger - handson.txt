@@ -1,0 +1,125 @@
+Setup - Developer Console
+
+File - New - Apex Trigger - Name: StudentTrigger1 on Student__c object:
+
+trigger StudentTrigger1 on Student__c (before insert, before update, after delete) {
+    system.debug('StudentTrigger1 is called');
+}
+
+Go to MyAppLightning - Update a Student column
+
+Come back to Dev console - Logs - Pick Latest Log and select debug only - you should see 'StudentTrigger1 is called'
+
+Note: If you go to Setup - Object Manager - Student__c object - Triggers - you should see the same trigger defined above
+
+~~~~~~~~~~
+
+Lets create a trigger now from Setup - Object Manager - Student__c object - Triggers - New
+
+trigger StudentTrigger2 on Student__c (after update) {
+    system.debug('StudentTrigger2 is called');
+}
+
+     
+Verify by updating a record, same as shown above
+
+~~~~~~~~~~~
+
+More complex trigger - with some actual useful functionality - assign default value:
+
+if dept/branch is not entered, it is set ti default value - Other
+
+trigger StudentTrigger3 on Student__c (before insert, before update) {
+    
+    system.debug('Student Trigger 3 is called');
+    
+    for (Student__c student: Trigger.new) {
+        if (String.isBlank(student.branch__c)) {
+            student.branch__c = 'Other';
+        }
+    }
+
+}
+
+~~~~~~~~~~
+
+You can de-activate a trigger by going to setup - object manager - particular object - triggers - open/edit particular trigger and uncheck "is active"
+
+~~~~~~~~~
+
+Another complex trigger - with some actual useful functionality - validation and throwing error:
+
+trigger StudentTrigger4 on Student__c (before insert, before update) {
+    
+    system.debug('Student Trigger 4 is called');
+    
+    for (Student__c student: Trigger.new) {
+        if (String.isBlank(student.branch__c)) {
+            student.addError('Branch cannot be blank');
+        }
+    }
+
+}
+
+
+~~~~~~~~
+
+
+Using all trigger context variables:
+
+trigger StudentTrigger5 on Student__c (before insert, before update, before delete, after insert, after update, after delete, after undelete) {
+    
+    if (Trigger.isBefore & Trigger.isUpdate) {
+        system.debug('Before update trigger called');
+    }
+    
+    if (Trigger.isBefore & Trigger.isInsert) {
+        system.debug('Before insert trigger called');
+    }
+    
+     if (Trigger.isBefore & Trigger.isDelete) {
+        system.debug('Before delete trigger called');
+    }
+    
+     if (Trigger.isAfter & Trigger.isUpdate) {
+        system.debug('After update trigger called');
+    }
+    
+    if (Trigger.isAfter & Trigger.isInsert) {
+        system.debug('After insert trigger called');
+    }
+    
+     if (Trigger.isAfter & Trigger.isDelete) {
+        system.debug('After delete trigger called');
+    }
+    
+    if (Trigger.isUndelete) {
+        system.debug('Undelete trigger called');
+    }
+
+}
+
+
+~~~~~~~~~ useful functionality using context vaariables
+
+if new score > old score, update with new score. else keep old score.
+few other context variables like size, isExecuting, OperationType are also used.
+
+
+trigger StudentTrigger6 on Student__c (before update) {
+    
+    System.debug('isExecuting:'+Trigger.isExecuting);
+       
+    for(Student__c student: Trigger.new) {
+        
+        if(student.score__c < Trigger.oldMap.get(student.id).score__c) {
+            student.score__c = Trigger.oldMap.get(student.id).score__c;
+        }
+    }
+    
+    System.debug('Size:'+Trigger.size);
+    System.debug('Operation Type:'+Trigger.operationType);
+    System.debug('isExecuting:'+Trigger.isExecuting);
+
+}
+

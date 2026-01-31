@@ -1,0 +1,116 @@
+Classic View 
+
+Select an App at the top right (this step not needed actually)
+
+Setup
+
+In quick find / search -> look for apps, tabs, objects and then you can create these custom stuff.
+
+~~~~~ app
+
+In quick find / search -> look for apps. click on apps, existing apps will show.
+
+New - App Name (My App)
+
+Insert image for your app if needed 
+
+Not selecting any tabs for now apart from existing Home tab 
+
+Choose all profiles for now in "assign to Profiles" - Save
+
+Now your App must list on the top right. It will not have any tabs as of now.
+
+~~~~~ object
+
+In quick find / search -> look for objects
+
+click on objects, existing objects will show (none for now)
+
+New custom object - Label & Object Name -> Student. 
+
+Plural Label -> Students. 
+
+Record Name and Data Type, leave default values "Student Name" and "text".
+
+Save & New.
+
+Another New custom object - Label & Object Name -> College. 
+
+Plural Label -> Colleges. 
+
+Record Name and Data Type, leave default values "College Name" and "text".
+
+Save.
+
+~~~~~ tabs
+
+In quick find / search -> look for tabs
+
+create new custom object tab
+
+Associate the object "Student", created above and select a Tab style
+
+Add to Profiles - leave at default
+
+Add to Apps - select My App created above
+
+Repeat above for object "College"
+
+Student tab is now associated with Student object and College tab is now associated with College object and both are associated with MyApp
+
+~~~~~~ object fields
+
+In quick find / search -> look for objects
+
+Click on objects, existing objects will show
+
+Click on the label "Student", not edit.
+
+Custom Fields & Relationships - New
+
+Select Data Type (Number), Field Label (Roll Number), change Field Name etc if needed. Required can be checked, if needed. 
+
+Establish field level security:
+Select the profiles to which you want to grant edit access to this field via field-level security. 
+The field will be hidden from all profiles if you do not add it to field-level security.
+All are selected now
+
+Save & new
+
+Add other fields like Branch, College, Contact # following the same steps.
+
+Verify: click on objects, existing objects will show. click on the label "Student" and check the fields
+
+~~~~~~~ object rows / records
+
+In the tabs section, click on Students - New - Add values for the fields & Save.
+
+Now, when you click on Students tab - Go - the Student Name will be listed as URLs. You can go into URLs and look at the data.
+
+
+===============================================================================================
+
+
+In Lightning experience, click on the dots at top left (App Launcher). Search for apps like Sales etc. (this step not needed actaully)
+
+Setup
+
+Quick find -> look for apps, tabs, objects and then you can create these custom stuff.
+
+~~~~
+
+Apps - App Manager - You will be able to see all standard / custom apps.
+
+The My App created above can be "upgraded" to Lightning - in this case, both Standard and Lightning apps will be available (hv a diffrnt name My App Lightning)
+
+Create new - New Lightning App:
+
+Provide Name, Developer Name, Description, Image (Optional), Primary Color - Default App Options
+
+Add items (objects) - custom & standard - Home, Students, Colleges, Teachers, Staff Rooms (you can order it as needed)
+My understanding is, there is no concept of "tabs" here and "items" means "objects".
+
+User profiles that can access this app (System Admin, Custom: Sales Profile)
+
+Verify from App Launcher - search for My App Lightning
+

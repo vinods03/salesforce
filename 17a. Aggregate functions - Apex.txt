@@ -1,0 +1,14 @@
+AggregateResult[] records = 
+    [SELECT LeadSource, min(amount) min_amount, max(amount) max_amount, sum(amount) total_amount, avg(amount) avg_amount 
+     FROM OPPORTUNITY group by LeadSource having min(amount) >= 80000];
+
+for (AggregateResult record: records) {
+    system.debug('Lead Source: ' +record.get('LeadSource') + ' Min Amount: ' +record.get('min_amount') + ' Max Amount: ' +record.get('max_amount')
+                + ' Total Amount: ' +record.get('total_amount') + ' Average amount: ' + record.get('avg_amount'));
+}
+
+
+-- Note:
+
+Not using record.field_name like in normal loop (see update process). Using record.get. record.get('field_name') for normal fields. record.get('alias') for aggr fields.
+Using AggregateResult as Object / Object Array insstead of Table

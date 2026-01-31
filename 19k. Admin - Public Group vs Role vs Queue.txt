@@ -1,0 +1,63 @@
+**Public Groups** are manual collections of users that help you share records and manage access more efficiently.
+
+## What Public Groups Are
+
+A public group is a named set of users that can include:
+- Individual users
+- Roles (and their subordinates)
+- Roles and subordinates
+- Other public groups (nested groups)
+- Queues
+- Territories
+
+## How They're Typically Used
+
+### 1. **Sharing Rules**
+The most common use - grant access to records based on criteria:
+
+**Example:** "Share all Opportunities in the Western Region with the Western Sales Team group"
+- Instead of sharing with 15 individual users, you share with one group
+- When new team members join, just add them to the group
+
+### 2. **Manual Sharing**
+Quick ad-hoc sharing of individual records:
+
+**Example:** You own an Account and want to share it with the "Product Team" group
+- Click Share → Select "Product Team" group → Grant Read/Write access
+- All group members can now access that record
+
+### 3. **Folder Access** (Reports, Dashboards, Documents, Email Templates)
+Control who can view/edit folders:
+
+**Example:** "Marketing Reports" folder is shared with "Marketing Team" group
+- Only Marketing Team members can access these reports
+
+### 4. **Apex Sharing** (Programmatic)
+Developers can use groups in code to assign record access dynamically
+
+### 5. **List Email Functionality**
+Send mass emails to all group members at once
+
+## Public Groups vs. Other Grouping Mechanisms
+
+| Feature                    | Public Group        | Queue                 | Role |
+|---------                   |-------------        |-------                |------|
+| **Purpose**                | Flexible sharing    | Workload management   | Hierarchy-based access |
+| **Membership**             | Manually defined    | Manually defined      | Org structure |
+| **Can own records?**       | No                  | Yes                   | No |
+| **Used in sharing rules?** | Yes                 | Yes                   | Yes |
+
+## Typical Real-World Examples
+
+**"Executive Team"** - Give executives access to sensitive accounts/opportunities
+
+**"Finance Department"** - Share financial records across finance users regardless of role hierarchy
+
+**"Regional Sales - Northeast"** - Share regional data with geographically distributed team
+
+**"IT Support Staff"** - Grant access to customer cases or technical records
+
+## Key Advantage
+
+Public groups provide **flexibility** that roles don't - you can group users by function, geography, project, or any business logic without being constrained by the role hierarchy structure.
+

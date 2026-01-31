@@ -1,0 +1,31 @@
+Access Modifiers in Apex Class Salesforce:
+Private < Protected < Public < Global 
+
+Private: Variables and Methods are accessible only inside the class
+Protected: Variables and Methods are accessible inside the class and in the child classes
+Public: Variables and Methods are accessible outside the class as well
+Global: Variables and Methods are accessible outside the namespace as well i.e. classes in org1 namespace can be accessible in org2 as well
+AppExchange is used to achive this
+
+Example:
+
+Private: Variables and Methods are accessible only inside the class
+If you write an anonymous block using this class / obj, even there you cannot access the class' private variables or methods.
+
+-- Apex class
+
+public class A {
+    private integer A_val=3;
+    private void A_show()
+    {
+      system.debug('Value of A_val: '+A_val);
+    }
+}
+
+-- anonymous block will throw error
+
+A a = new A();
+system.debug('Value of A_val: ' +a.A_val )
+a.A_show();
+
+Use similar code to try out the other modifiers.

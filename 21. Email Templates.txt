@@ -1,0 +1,121 @@
+Note: Classic seems to work better than Lightning here, need to explore Lightning bit more for email templates but used Classic here.
+
+Email Templates: You might want to send mail to thousands of customers. Email Templates help in this.
+Setup - Quick find - Email Templates - I chose Classic Email Templates. Lighting Email Templates can also be chosen.
+Create a folder (Vinod Email Templates Folder), accessible by all ussers (can be retricted), but no exiting Email template chosen.
+In this folder, create a new Email Template
+4 types of Email Templates possible:
+
+Text
+HTML (using Classic Letterhead)
+Custom (without using Classic Letterhead)
+Visualforce
+
+``````
+
+Type 1:
+
+Text - Select "Available for use"
+Email Template Name: Vinod Text Email Template
+Desc: Thank you email template
+Sub: Thank you for your inquiry
+Email body:
+
+Dear Customer,
+Thanks for your interest in our product. We will get in touch with you shortly !!
+
+Best Regards
+Customer Care
+
+Using Available Merge fields:
+Contact Fields - Name - copy {!Contact.Name}
+Sending User Fields - Name - Copy {!User.Name}
+
+The above mail becomes:
+Dear {!Contact.Name},
+Thanks for your interest in our product. We will get in touch with you shortly !!
+
+Best Regards
+{!User.Name}
+
+Switch to Classic View - + tab and Ctrl+F -> Contacts
+Select ALL req contacts - choose template - give a name for the mass email - send now or schedule
+Check email (For me, it went to Spam)
+
+
+```````
+
+Type 2:
+For this, we first need to create a Document - then Letterhead - finally Email Template
+HTML (using Classic Letterhead) - Select "Available for use"
+
+Classic View - + Tab - Ctrl+F -> documents. Create new folder - new document by selecting a jpg (i resized img to 200px * 200px and selected externally available img)
+Setup - Quick find - Letterheads - Classic - New - select logo using doc above, change body / footer as needed
+Setup - Quick Find - Email Templates - new template using above letterhead
+Email Template Name: Vinod Letterhead Email Template
+Desc: Thank you email Letterhead template
+Sub: Thank you for your inquiry
+
+Email body:
+Dear {!Contact.Name},
+Thanks for your interest in our product. We will get in touch with you shortly !!
+
+Best Regards
+{!User.Name}
+
+Switch to Classic View - + tab and Ctrl+F -> Contacts
+Select ALL req contacts - choose template - give a name for the mass email - send now or schedule
+Check email (For me, it went to Spam)
+
+
+````````````
+
+Type 3:
+Custom (without using Classic Letterhead) - Select "Available for use"
+Email Template Name: Vinod Custom Email Template
+Desc: Thank you email custom template
+Sub: Thank you for your inquiry
+Email body:
+
+<pre>
+Dear <b>{!Contact.Name}</b>,
+Thanks for your interest in our product. We will get in touch with you shortly !!
+
+Best Regards
+<i>{!User.Name}</i>
+</pre>
+
+Switch to Classic View - + tab and Ctrl+F -> Contacts
+Select ALL req contacts - choose template - give a name for the mass email - send now or schedule
+Check email (For me, it went to Spam)
+
+
+```````````````
+
+
+Type 4:
+
+Visualforce - Select "Available for use"
+Email Template Name: Vinod VisualForce Email Template
+Desc: Thank you email visualforce template
+Sub: Thank you for your inquiry
+ +	 
+Email Subject: Thank you
+Recipient Type: Contact
+Related To Type: Lead
+
+Then Save
+Edit Template to:
+<messaging:emailTemplate subject="Than you" recipientType="Contact" relatedToType="Lead">
+<messaging:plainTextEmailBody >
+Hello. Required data is as follows:
+Name: {!relatedTo.Name}
+Company: {!relatedTo.Company}
+Lead Status: {!relatedTo.Status}
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>
+
+Send Test and Verify Merge Fields - you need to select a particular contact to send email and a particular Lead about whom to send email.
+
+Note that, this is way of sending more dynamic emails, like a particular object - records level details.
+However, you cannot send mass emails (+ tab, Ctrl+F Contacts - Mass Email - this template will not even show up)

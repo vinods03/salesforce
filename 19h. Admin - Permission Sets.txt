@@ -1,0 +1,27 @@
+Suppose there are 2 users - Test User 1 and Test User 2 - with same profile
+
+That profile does not provide access to an app "My App"
+
+But Test User 1 needs access to this app. This is achieved using Permission Sets.
+
+Permission sets extend users’ functional access without changing their profiles and are the recommended way to manage your users’ permissions.
+
+
+~~~~~~~ 
+
+Setup
+
+Quick find - Permission Sets - New - Label: My Permission Set for This App - Save
+
+Then go to Apps - assigned Apps - select required App "My app"
+
+Then "Manage Assignments" - select the user (Test User 1) to assign
+
+If you check in Quick find - Users - Test User 1, you will be able to see the Permission Sets assigned to the user
+
+Note that 1 user can have 0 to many permission sets.
+
+Now, if you login as Test User 1, the "My App" will be visible.
+
+Note that, apart from Apps, you can control access to Object Settings (Permissions to access objects and fields, and settings such as tab availability) and many other features using Permission sets.
+

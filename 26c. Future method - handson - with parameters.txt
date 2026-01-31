@@ -1,0 +1,28 @@
+File - New- Apex Class: (params cannot be objects)
+
+public class FutureExample2 {
+    
+    @future
+    public static void updateRecords(Set<Id> recordId) {
+        
+        List<Lead> leads = [select firstname, lastname, company, status from lead where id in :recordId];
+        for(Lead lead: Leads) {
+            lead.company = 'Google';
+        }
+        
+        update leads;
+        
+    }
+
+}
+
+
+--------
+
+Debug: Open Execute Anonymous Window: (note, we are using class name and not object name)
+
+Map<Id, Lead> recordMap = new Map<Id, Lead>([select firstname, lastname, company, status from Lead where firstname = 'Sachin']);
+FutureExample2.updateRecords(recordMap.keySet());
+
+
+Verify the data in the table

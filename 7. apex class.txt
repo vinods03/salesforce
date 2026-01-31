@@ -1,0 +1,22 @@
+Developer Console:
+
+Step 1: File -> New Apex Class (create class)
+
+public class Calc {
+    
+    public double result;
+    
+    public double add(integer x, integer y) {
+        result = x + y;
+        return result;
+    }
+
+}
+
+
+Step 2: Debug - Open Execute Anonymous Window (create object of above class and execute)
+
+Calc c = new Calc();
+double z;
+z = c.add(80, 190);
+system.debug('Addition result is: ' +z);

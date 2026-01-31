@@ -1,0 +1,7 @@
+In Lightning experience - setup - quick find
+
+roles
+
+Users - Roles - Setup Roles 
+
+From here, you can add, edit, delete, assign roles to users

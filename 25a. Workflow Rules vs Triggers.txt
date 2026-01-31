@@ -1,0 +1,11 @@
+## Trigger vs Workflow Rule
+
+**Workflow Rules:** Point-and-click automation with **limited capabilities** - can only do field updates, email alerts, tasks, and outbound messages. Fires **after** record is saved. Simple, declarative, admin-friendly.
+
+**Triggers:** Custom **Apex code** with **unlimited capabilities** - can perform complex logic, query/update any records, call external systems, prevent saves, handle bulk operations. Fires **before or after** save. Requires programming, developer-level.
+
+**When to use each:**
+- **Workflow**: Simple automations (update field, send email when opportunity closes)
+- **Trigger**: Complex logic (calculate values across multiple objects, enforce custom validation, integrate with external systems)
+
+**Pro tip:** Salesforce recommends using **Flow** (not workflows, which are deprecated) for declarative automation, and only write triggers when Flow can't handle your requirements - triggers are powerful but harder to maintain.

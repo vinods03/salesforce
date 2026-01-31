@@ -1,0 +1,5 @@
+Many-to-Many relationship is Salesforce is achieved with the the use of "Junction Object".
+For junction objects, record name - data type is auto-numbered, not user-input text.
+This junction object will have 2 master-detail relationships with each of the objects in the master-detail relationship.
+
+In the 2 tables, these records will show separately (as multiple records) and not as part of the other fields

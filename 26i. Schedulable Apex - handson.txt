@@ -1,0 +1,35 @@
+File - New - Apex Class:
+
+public class ScheduleApex implements Schedulable {
+    
+    public void execute(SchedulableContext context) {
+        
+        List<Lead> leads = [select firstname, lastname, company, status from lead];
+        
+        for(Lead lead: Leads) {
+            lead.company = 'Amazon';
+        }
+        
+        update leads;
+    }
+
+}
+
+-------------
+
+Debug: Open execute anonymous window
+
+ScheduleApex sa = new ScheduleApex();
+String cronExp = '0 30 2 ? * MON-FRI';
+String jobId = System.schedule('Sch Job Example', cronExp, sa);
+System.debug('Job ID:'+ jobId);  // Note down the jobId
+
+-------------
+
+Verify by going to Setup - Quick Find - Scheduled Jobs - must see your job name. Job can be deleted / paused here
+
+-------------
+
+Developer Console - File - Open Resource - Look for cronTrigger.obj - select req columns and add where clause with above noted job id to get more details like current state, next fire time etc.
+
+SELECT Id, PreviousFireTime, NextFireTime, State, StartTime, EndTime, CronExpression FROM CronTrigger where id = '08eg5000002WEMs'

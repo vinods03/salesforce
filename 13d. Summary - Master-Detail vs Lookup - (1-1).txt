@@ -1,0 +1,13 @@
+Master-Detail relationship:
+When you delete a record in College table (master), the corresponding records in Student object (child) also get deleted.
+
+Lookup relationship:
+When you delete a Staff room (master) record, corresponding Teacher (child) record still exists with blank value in the Staff room field.
+
+Both are one-to-one relationships.
+
+==============
+
+In a Master-Detail relationship, each parent record can have multiple dependent child records linked to it, ensuring that the child records cannot exist without the parent. This structure emphasizes a strong dependency, which is essential for maintaining organized data relationships.
+
+Lookup relationships can also link multiple child records to a single parent, but they do not enforce the dependency or the ownership rules that are characteristic of Master-Detail relationships.

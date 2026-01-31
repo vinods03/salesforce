@@ -1,0 +1,14 @@
+Salesforce CLI:
+
+Google for salesforce CLI - go to salesforce dev site - download for windows x64 and execute.
+Set the Path to D:\Users\Vinod.
+In cmd prompt, verify by running the command:
+sf --version
+Also:
+sf update
+
+VS Code:
+
+code.visualstudio.com
+download for windows x64 and execute
+After installation - extensions - add salesforce extension Pack

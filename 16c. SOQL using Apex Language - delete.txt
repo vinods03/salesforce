@@ -1,0 +1,9 @@
+List<College__c> colleges = [SELECT ID__c, Name,  City__c, University__c FROM College__c where Name = 'PVN'];
+delete colleges; // partial delete not allowed
+Database.delete(colleges); // partial delete not allowed
+Database.delete(colleges, true); // partial delete not allowed
+Database.delete(colleges, false); // partial delete allowed
+
+In lightning experience, click on 9-dots (app launcher)
+In the search bar, type "Recycle bin" and find the deleted records
+These records can be restored form here

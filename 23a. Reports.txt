@@ -1,0 +1,52 @@
+Classic View - + tab - Customize Tabs - Add Reports tab and Dashboards tab
+
+Go to Reports tab
+
+New Report - Choose Report Type (represents object groups). I chose Leads.
+
+You can add filters, add columns, remove columns, choose date range and choose report format - Tabular
+
+You can then run report, save report etc
+
+--
+
+New report on Leads
+
+report format - Summary
+
+drag and drop column/s to create grouping and sub-grouping. summarize by numeric colummns (sub-totals by groups). conditional highlighting on summarized fields. add charts.
+
+--
+
+New report on Leads
+
+report format - Matrix
+
+group data in rows and columns. In above, instead of having grouping and sub-grouping (both row-level grouping), you can drg / drop the sub-grouping colum into column.
+
+All features of summary reports are possible here as well.
+
+--
+
+report format - Joined
+
+can have multiple reports of same report type / object or multiple report types / objects, each with its own set of columns and filters. 
+can group by a field across reports when possible / relevant.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ custom report type ~~~~~~~~~~~~~~~~~~
+
+If you have custom objects like Students, Colleges that you want to show in reports, first create a new report type
+
+Setup - Quick find - report types - new report type - choose Primary object Student (can be parent of Student also) and child object (here you can choose Student, if parent obj earlier)
+
+Then, go to + tabs - Reports - New Report - Choose above report type and continue 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ schedule report runs ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can run a report now or schedule it for later - daily, weekly, monthly, weekday options are possible. Provide preferred start time.
+
+Running a report refreshes the data in the report from the base objects.
+
+You can email the report to required users.
+
+Now, in setup - Quick find - Scheduled jobs - you will see the scheduled report.

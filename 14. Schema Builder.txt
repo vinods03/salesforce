@@ -1,0 +1,5 @@
+Setup - Quick find - Schema Builder:
+
+Objects - select custom objects, selected objects, all objects etc as needed and you can see the object / field defintions and relationships between the objects.
+
+Elements - You can drag and drop elements like objects, field, master-detail reelationship etc into the schema builder and define / build new objects and relationships as well.

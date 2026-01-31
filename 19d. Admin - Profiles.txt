@@ -1,0 +1,11 @@
+In Lightning experience - setup - quick find
+
+profiles
+
+New profile - clone from an existing profile
+
+Select what page layouts, apps, tabs, general user permissions, table permissions, field-level permissions can be given for this profile
+
+Also, password policies for the profile.
+
+Remember - every user MUST BE tagged to a Profile. Role / Public Group / Queue membership are optional for a user.
